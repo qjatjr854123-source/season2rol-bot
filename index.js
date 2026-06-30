@@ -253,6 +253,12 @@ client.once('ready', async () => {
     console.error('명령어 등록 실패:', err);
   }
 
+  // 채널이 없으면 자동 생성
+  const guild = client.guilds.cache.get(GUILD_ID);
+  if (guild && guild.channels.cache.filter(c => c.type !== 4).size === 0) {
+    await setupChannels(guild);
+    console.log('✅ 서버 채널 자동 생성 완료');
+  }
 });
 
 client.on('interactionCreate', async (interaction) => {
