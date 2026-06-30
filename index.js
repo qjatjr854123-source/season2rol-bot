@@ -159,13 +159,6 @@ async function setupChannels(guild) {
       ],
     },
     {
-      name: '🎵 음악', type: ChannelType.GuildCategory,
-      children: [
-        { name: '음악-신청', type: ChannelType.GuildText },
-        { name: '플레이리스트', type: ChannelType.GuildText },
-      ],
-    },
-    {
       name: '🔊 내전 음성', type: ChannelType.GuildCategory,
       children: [
         { name: '대기실', type: ChannelType.GuildVoice },
